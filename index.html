@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Chimaniiiii✨</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        
+        html {
+            scroll-behavior: smooth
+        }
+        
+        body {
+            font-family: Poppins, sans-serif;
+            background: #080014;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        canvas {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 20
+        }
+        
+        .bg {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background: radial-gradient(circle at 20% 20%, rgba(255, 65, 130, .22), transparent 30%), radial-gradient(circle at 80% 30%, rgba(120, 80, 255, .20), transparent 30%), radial-gradient(circle at 50% 90%, rgba(255, 170, 50, .12), transparent 35%), linear-gradient(135deg, #080014, #160025 50%, #05000c);
+        }
+        
+        .stars {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            opacity: .7
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate
+        }
+        
+        @keyframes twinkle {
+            from {
+                opacity: .15;
+                transform: scale(.7)
+            }
+            to {
+                opacity: 1;
+                transform: scale(1.5)
+            }
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .card {
+            width: min(920px, 94vw);
+            padding: 55px 25px;
+            border: 1px solid rgba(255, 255, 255, .16);
+            border-radius: 35px;
+            background: rgba(255, 255, 255, .06);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 25px 100px rgba(0, 0, 0, .45);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 9px 18px;
+            border-radius: 99px;
+            background: rgba(255, 255, 255, .09);
+            border: 1px solid rgba(255, 255, 255, .16);
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase
+        }
+        
+        h1 {
+            font-family: "Great Vibes", cursive;
+            font-size: clamp(70px, 13vw, 145px);
+            line-height: .9;
+            margin: 25px 0 12px;
+            background: linear-gradient(90deg, #fff, #ff9bc4, #ffd27a, #fff);
+            -webkit-background-clip: text;
+            color: transparent;
+            background-size: 250%;
+            animation: shine 5s linear infinite
+        }
+        
+        @keyframes shine {
+            to {
+                background-position: 250% center
+            }
+        }
+        
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #ddd;
+            font-size: 17px;
+            line-height: 1.8
+        }
+        
+        .name {
+            color: #ff9bc4;
+            font-weight: 700
+        }
+        
+        .btn {
+            border: 0;
+            margin-top: 32px;
+            padding: 15px 27px;
+            border-radius: 999px;
+            color: white;
+            background: linear-gradient(90deg, #ff3f87, #8e5cff);
+            font: 600 15px Poppins;
+            cursor: pointer;
+            box-shadow: 0 10px 35px rgba(255, 63, 135, .25);
+            transition: .3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px) scale(1.03)
+        }
+        
+        .scroll {
+            margin-top: 38px;
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #aaa
+        }
+        
+        section {
+            padding: 90px 20px
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: auto
+        }
+        
+        .title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 15px
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 45px
+        }
+        
+        .wishes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+        
+        .wish {
+            padding: 30px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            transition: .3s;
+        }
+        
+        .wish:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, .09)
+        }
+        
+        .icon {
+            font-size: 35px;
+            margin-bottom: 15px
+        }
+        
+        .wish h3 {
+            margin-bottom: 9px
+        }
+        
+        .wish p {
+            color: #aaa;
+            line-height: 1.7;
+            font-size: 14px
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 750px;
+            margin: auto
+        }
+        
+        .timeline:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(#ff4d91, transparent);
+            transform: translateX(-50%)
+        }
+        
+        .memory {
+            width: 46%;
+            padding: 25px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            margin: 25px 0;
+            position: relative
+        }
+        
+        .memory:nth-child(odd) {
+            margin-right: auto
+        }
+        
+        .memory:nth-child(even) {
+            margin-left: auto
+        }
+        
+        .memory h3 {
+            color: #ff9bc4;
+            margin-bottom: 8px
+        }
+        
+        .memory p {
+            color: #aaa;
+            line-height: 1.7;
+            font-size: 14px
+        }
+        
+        .final {
+            text-align: center;
+            padding-bottom: 120px
+        }
+        
+        .final .big {
+            font-family: "Great Vibes";
+            font-size: clamp(55px, 9vw, 100px);
+            color: #ff9bc4
+        }
+        
+        .message {
+            max-width: 700px;
+            margin: 20px auto;
+            color: #ddd;
+            line-height: 2;
+            font-size: 16px
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            font-size: 12px
+        }
+        
+        #surprise {
+            display: none
+        }
+        
+        .reveal {
+            animation: reveal .9s ease both
+        }
+        
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(30px)
+            }
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+        
+        @media(max-width:700px) {
+            .wishes {
+                grid-template-columns: 1fr
+            }
+            .timeline:before {
+                left: 8px
+            }
+            .memory,
+            .memory:nth-child(even),
+            .memory:nth-child(odd) {
+                width: calc(100% - 35px);
+                margin-left: 35px
+            }
+            .card {
+                padding: 45px 18px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="stars" id="stars"></div>
+    <canvas id="confetti"></canvas>
+
+    <header class="hero">
+        <div class="card">
+            <span class="badge">A Little Surprise For You ✨</span>
+            <h1>Happy Birthday Chimaniiiii</h1>
+            <p>Today isn't just another day… it's the day the world became a little brighter because <span class="name">YOU</span> were born. 💖</p>
+            <button class="btn" onclick="startSurprise()">🎁 Open Your Surprise</button>
+            <div class="scroll">SCROLL FOR YOUR SPECIAL MESSAGE ↓</div>
+        </div>
+    </header>
+
+    <main id="surprise">
+        <section class="reveal">
+            <div class="container">
+                <h2 class="title">Today Is All About You 💫</h2>
+                <p class="subtitle">Three wishes, from the heart.</p>
+                <div class="wishes">
+                    <div class="wish">
+                        <div class="icon">🌟</div>
+                        <h3>Dream Big</h3>
+                        <p>May every dream you carry in your heart find its way into reality.</p>
+                    </div>
+                    <div class="wish">
+                        <div class="icon">💖</div>
+                        <h3>Stay Happy</h3>
+                        <p>May your days be filled with genuine smiles, beautiful people and unforgettable moments.</p>
+                    </div>
+                    <div class="wish">
+                        <div class="icon">🚀</div>
+                        <h3>Keep Growing</h3>
+                        <p>May this new chapter bring you closer to everything you've ever wished for.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <div class="container">
+                <h2 class="title">A New Chapter Begins 📖</h2>
+                <p class="subtitle">May your story get more beautiful from here.</p>
+                <div class="timeline">
+                    <div class="memory">
+                        <h3>✨ More Adventures</h3>
+                        <p>More places to explore, more crazy memories to create, and more reasons to smile.</p>
+                    </div>
+                    <div class="memory">
+                        <h3>🌙 More Peace</h3>
+                        <p>May you always find calm after the chaos and light even on difficult days.</p>
+                    </div>
+                    <div class="memory">
+                        <h3>🏆 More Wins</h3>
+                        <p>Keep believing in yourself. Your best chapters may still be waiting to be written.</p>
+                    </div>
+                    <div class="memory">
+                        <h3>❤️ More Love</h3>
+                        <p>May you always be surrounded by people who value, respect and genuinely care for you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final reveal">
+            <div class="container">
+                <div class="big">Once Again…</div>
+                <h2 class="title">HAPPY BIRTHDAY POOJA DIDI ! 🎂🥳</h2>
+                <p class="message">
+                    May this birthday mark the beginning of your happiest, strongest and most unforgettable year yet. Keep smiling. Keep dreaming. Keep becoming the person you want to be. And whenever life gets difficult, remember how far you've already come. 💜
+                    <br><br><strong>Here's to you, your dreams, your journey and all the beautiful moments ahead. 🥂✨</strong>
+                </p>
+                <button class="btn" onclick="celebrate()">🎉 One More Surprise!</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>Made with ❤️ specially for someone special.</footer>
+
+    <script>
+        const stars = document.getElementById("stars");
+        for (let i = 0; i < 100; i++) {
+            const s = document.createElement("span");
+            s.className = "star";
+            s.style.left = Math.random() * 100 + "%";
+            s.style.top = Math.random() * 100 + "%";
+            s.style.animationDelay = Math.random() * 2 + "s";
+            stars.appendChild(s);
+        }
+
+        const canvas = document.getElementById("confetti"),
+            ctx = canvas.getContext("2d");
+        let pieces = [],
+            running = false;
+
+        function resize() {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight
+        }
+        resize();
+        addEventListener("resize", resize);
+
+        function burst(count = 180) {
+            pieces = [];
+            for (let i = 0; i < count; i++) pieces.push({
+                x: innerWidth / 2,
+                y: innerHeight * .35,
+                vx: (Math.random() - .5) * 14,
+                vy: Math.random() * -13 - 3,
+                size: Math.random() * 8 + 3,
+                rot: Math.random() * 6.28,
+                life: Math.random() * 180 + 100,
+                emoji: Math.random() > .8 ? "💖" : ""
+            });
+            if (!running) {
+                running = true;
+                animate()
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            pieces.forEach(p => {
+                p.x += p.vx;
+                p.vy += .22;
+                p.y += p.vy;
+                p.rot += .12;
+                p.life--;
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.rot);
+                ctx.font = p.size * 2 + "px Arial";
+                if (p.emoji) ctx.fillText(p.emoji, 0, 0);
+                else {
+                    ctx.fillRect(0, 0, p.size, p.size * 1.7)
+                }
+                ctx.restore();
+            });
+            pieces = pieces.filter(p => p.life > 0 && p.y < innerHeight + 30);
+            if (pieces.length) {
+                requestAnimationFrame(animate)
+            } else {
+                running = false
+            }
+        }
+
+        function startSurprise() {
+            document.getElementById("surprise").style.display = "block";
+            burst(220);
+            setTimeout(() => document.getElementById("surprise").scrollIntoView({
+                behavior: "smooth"
+            }), 350);
+        }
+
+        function celebrate() {
+            burst(320);
+            for (let i = 0; i < 3; i++) setTimeout(() => burst(120), i * 450);
+        }
+    </script>
+</body>
+
+</html>
